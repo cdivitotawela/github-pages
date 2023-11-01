@@ -35,13 +35,13 @@ jobs:
           pip install -r requirements.txt
           mkdocs build --site-dir=site
 
-    - name: Cache
-      uses: actions/cache@v2
-      env:
-        cache-name: cache
-      with:
-        path: site
-        key: site-${{ github.sha }}
+      - name: Cache
+        uses: actions/cache@v2
+        env:
+          cache-name: cache
+        with:
+          path: site
+          key: site-${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
