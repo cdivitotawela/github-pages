@@ -1,4 +1,4 @@
-# GitHub Pages Site
+# GitHub Pages Site [HACKED]
 
 This is example static site generated using the mkdocs and hosted via GitHub pages.
 
