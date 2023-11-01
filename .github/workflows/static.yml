@@ -22,9 +22,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
   build:
-
     runs-on: ubuntu-latest
     container:
       image: python:3.10-slim-bullseye
@@ -37,7 +35,7 @@ jobs:
           pip install -r requirements.txt
           mkdocs build --site-dir=./site
 
-     - name: Deploy 
+      - name: Deploy 
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
