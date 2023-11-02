@@ -37,7 +37,7 @@ jobs:
         cache-name: cache-sdk
       with:
         path: ./message
-        key: sdk-${{ github.sha }}
+        key: sdk
 
 
   publish:
@@ -49,7 +49,7 @@ jobs:
         cache-name: cache-sdk
       with:
         path: ./message
-        key: sdk-${{ github.sha }}    
+        key: sdk   
     - run: ls -l
 
       # - name: Checkout
