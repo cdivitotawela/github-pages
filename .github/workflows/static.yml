@@ -39,17 +39,28 @@ jobs:
         path: ./message
         key: sdk
 
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: ./message
+
 
   publish:
     runs-on: ubuntu-latest
     needs: ['build']
     steps:
-    - uses: actions/cache@v3
-      env:
-        cache-name: cache
+    # - uses: actions/cache@v3
+    #   env:
+    #     cache-name: cache
+    #   with:
+    #     path: ./message
+    #     key: sdk   
+
+    - uses: actions/download-artifact@v3
       with:
+        name: my-artifact
         path: ./message
-        key: sdk   
+
     - run: ls -l
 
       # - name: Checkout
