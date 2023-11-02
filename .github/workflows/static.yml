@@ -40,6 +40,17 @@ jobs:
         key: sdk-${{ github.sha }}
 
 
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/cache@v3
+      env:
+        cache-name: cache-sdk
+      with:
+        path: ./message
+        key: sdk-${{ github.sha }}    
+    - run: ls -l
+
       # - name: Checkout
       #   uses: actions/checkout@v3
 
