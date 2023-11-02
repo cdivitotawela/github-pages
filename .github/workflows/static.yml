@@ -34,7 +34,7 @@ jobs:
 
     - uses: actions/cache@v3
       env:
-        cache-name: cache-sdk
+        cache-name: cache
       with:
         path: ./message
         key: sdk
@@ -46,7 +46,7 @@ jobs:
     steps:
     - uses: actions/cache@v3
       env:
-        cache-name: cache-sdk
+        cache-name: cache
       with:
         path: ./message
         key: sdk   
