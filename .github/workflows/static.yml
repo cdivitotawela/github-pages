@@ -28,7 +28,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: python:3.10
+      image: python:3.10-alpine
     steps:
     - run: echo "test" > ./message
 
