@@ -27,13 +27,17 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: python:3.10
     steps:
-    - run: echo $PYTHON_VERSION ${{ env.PYTHON_VERSION }}
-    - name: Setup Python
-      uses: actions/setup-python@v4
+    - run: echo "test" > ./message
+
+    - uses: actions/cache@v4
+      env:
+        cache-name: cache-sdk
       with:
-        python-version: ${{ env.PYTHON_VERSION }}
-    
+        path: ./message
+        key: sdk-${{ github.sha }}
 
 
       # - name: Checkout
