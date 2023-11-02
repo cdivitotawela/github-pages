@@ -27,10 +27,14 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: python:${{ env.PYTHON_VERSION }}
     steps:
-      - run: echo $PYTHON_VERSION ${{ env.PYTHON_VERSION }}
+    - run: echo $PYTHON_VERSION ${{ env.PYTHON_VERSION }}
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+
 
       # - name: Checkout
       #   uses: actions/checkout@v3
