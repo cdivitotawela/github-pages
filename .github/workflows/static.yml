@@ -28,7 +28,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: python:3.10-slim-bullseye
+      image: python:${{ env.PYTHON_VERSION }}
     steps:
       - run: echo $PYTHON_VERSION ${{ env.PYTHON_VERSION }}
 
