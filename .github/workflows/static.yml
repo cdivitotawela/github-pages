@@ -32,7 +32,7 @@ jobs:
     steps:
     - run: echo "test" > ./message
 
-    - uses: actions/cache@v4
+    - uses: actions/cache@v3
       env:
         cache-name: cache-sdk
       with:
