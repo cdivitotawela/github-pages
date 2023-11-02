@@ -32,12 +32,12 @@ jobs:
     steps:
     - run: echo "test" > ./message
 
-    - uses: actions/cache@v3
-      env:
-        cache-name: cache
-      with:
-        path: ./message
-        key: sdk
+    # - uses: actions/cache@v3
+    #   env:
+    #     cache-name: cache
+    #   with:
+    #     path: ./message
+    #     key: sdk
 
     - uses: actions/upload-artifact@v3
       with:
